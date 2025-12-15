@@ -389,6 +389,8 @@ void() worldspawn =
 	clientstat(STAT_WEAPONNAME, EV_STRING, Weapon_Name);
 	clientstat(STAT_WEAPONNAMETOUCH, EV_STRING, Weapon_Name_Touch);
 	clientstat(STAT_WEAPONTIER, EV_FLOAT, weapon_tier);
+	clientstat(STAT_VIEWMODEL_EFFECTS, EV_FLOAT, viewmodel_effects);
+	clientstat(STAT_VIEWMODEL2_EFFECTS, EV_FLOAT, viewmodel2_effects);
 
 	// Gun Game
 	clientstat(STAT_GUNGAME_IDX, EV_FLOAT, gungame_weapon_idx);
@@ -415,6 +417,7 @@ void() worldspawn =
 	mappath = strzone(mappath);
 
 	LoadWaypointData();
+	Zoning_LoadData();
 
 	//set game elements
 	G_PRONEPOINTS = 0;
